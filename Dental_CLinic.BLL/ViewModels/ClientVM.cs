@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Dental_CLinic.BLL.ViewModels
+{
+    public class ClientVM
+    {
+        public int Id { get; set; }
+
+        [Required(ErrorMessage ="Name Is Required"), MaxLength(50)]
+        public string Name { get; set; }
+        [Required(ErrorMessage ="Phone is Required"), MaxLength(15)]
+        public int Phone { get; set; }
+        [Required(ErrorMessage ="Addres is Required"), MaxLength(80)]
+        public string Address { get; set; }
+    }
+}
