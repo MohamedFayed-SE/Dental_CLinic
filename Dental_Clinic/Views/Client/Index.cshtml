@@ -4,26 +4,24 @@
     ViewData["Title"] = "CLient Page";
 }
 
+<div class="col-md-3">
+<a class="w-100" asp-controller="Client" asp-action="Add"><button class="btn btn-primary w-100">Add</button></a>
+</div>
 
 <table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col"># ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Addres</th>
-        </tr>
-    </thead>
+    
     <tbody>
        
         
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col"># ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Addres</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +32,8 @@
                             <td>@item.Name</td>
                             <td>@item.Phone</td>
                             <td>@item.Address</td>
+                        <td>  <a asp-route-Id="@item.Id" asp-controller="Client" asp-action="Edit"> <button class="btn btn-info">Update</button> </a></td>
+                             <td> <a asp-route-Id="@item.Id"> <button class="btn btn-danger">Delte</button> </a></td>
                         </tr>
                     }
                    

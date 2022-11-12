@@ -16,6 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContxt>
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddTransient<IClientService, ClientService>();
+builder.Services.AddTransient<IReservationService, ReservationService>();
 
 
 

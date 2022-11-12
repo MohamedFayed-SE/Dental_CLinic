@@ -17,5 +17,7 @@ namespace Dental_CLinic.BAl.Models
         public int Phone { get; set; }
         [Required,MaxLength(80)]
         public string Address { get; set; }
+
+        public ICollection<Reservation> reservations;
     }
 }

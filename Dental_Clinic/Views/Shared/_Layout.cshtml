@@ -304,6 +304,12 @@
                             <span>Home</span>
                         </a>
                     </li>
+                    <li class="active">
+                        <a asp-controller="Client" asp-action="Index">
+                            <i class="material-icons">People</i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
                     <li>
                         </ul>
 
@@ -340,6 +346,8 @@
     
     <!-- Jquery Core Js -->
     <script src="~/plugins/jquery/jquery.min.js"></script>
+
+    @RenderSection("MicroSoftValidation",required:false); 
 
     <!-- Bootstrap Core Js -->
     <script src="~/plugins/bootstrap/js/bootstrap.js"></script>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add</h2>
+
+
+@model Dental_CLinic.BLL.ViewModels.ReservationVM
+
+<form asp-controller="Client" asp-action="Add">
+ @*   <div class="form-group">
+        <label>Client Name</label>
+        <input type="" class="form-control" placeholder="Enter Name" asp-for="Price">
+        <span asp-validation-for="Price" class="text-danger"></span>
+
+    </div>*@
+    <div class="form-group">
+        <label for="exampleInputPassword1"> Reservation Price</label>
+        <input type="number" class="form-control" placeholder="Phone" asp-for="Price">
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-check">
+        <label for="exampleInputPassword1">Choose Client Name</label>
+        <span asp-validation-for="ClientId" class="text-danger"></span>
+        <select>
+
+            <option value="">Select</option>
+        </select>
+       
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@RenderSection("MicroSoftValidation");

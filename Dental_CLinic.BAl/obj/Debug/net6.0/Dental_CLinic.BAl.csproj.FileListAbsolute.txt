@@ -12,3 +12,17 @@ C:\Users\HP\source\repos\Dental_Clinic\Dental_CLinic.BAl\obj\Debug\net6.0\refint
 C:\Users\HP\source\repos\Dental_Clinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.pdb
 C:\Users\HP\source\repos\Dental_Clinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.genruntimeconfig.cache
 C:\Users\HP\source\repos\Dental_Clinic\Dental_CLinic.BAl\obj\Debug\net6.0\ref\Dental_CLinic.BAl.dll
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\bin\Debug\net6.0\Dental_CLinic.BAl.deps.json
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\bin\Debug\net6.0\Dental_CLinic.BAl.runtimeconfig.json
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\bin\Debug\net6.0\Dental_CLinic.BAl.dll
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\bin\Debug\net6.0\Dental_CLinic.BAl.pdb
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.csproj.AssemblyReference.cache
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.AssemblyInfoInputs.cache
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.AssemblyInfo.cs
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.csproj.CoreCompileInputs.cache
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.dll
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\refint\Dental_CLinic.BAl.dll
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.pdb
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\Dental_CLinic.BAl.genruntimeconfig.cache
+C:\Users\mohamed.fayed\Desktop\Dental_CLinic\Dental_CLinic.BAl\obj\Debug\net6.0\ref\Dental_CLinic.BAl.dll

@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "edit";
+}
+@model Dental_CLinic.BLL.ViewModels.ClientVM
+
+<h2>edit</h2>
+<form asp-controller="Client" asp-action="Add">
+    <div class="form-group">
+        <label>Client Name</label>
+        <input type="text" class="form-control" placeholder="Enter Name" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input type="number" class="form-control" placeholder="Phone" asp-for="Phone">
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="form-check">
+        <label for="exampleInputPassword1">Address</label>
+        <input type="text" class="form-control" placeholder="Address" asp-for="Address">
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section MicroSoftValidation {
+
+    <script src="~/plugins//jquery-validation//jquery.validate.js"> </script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
