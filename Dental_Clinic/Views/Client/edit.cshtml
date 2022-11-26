@@ -5,7 +5,9 @@
 @model Dental_CLinic.BLL.ViewModels.ClientVM
 
 <h2>edit</h2>
-<form asp-controller="Client" asp-action="Add">
+<form asp-controller="Client" asp-action="Edit">
+
+    <input type="hidden" asp-for="Id" />
     <div class="form-group">
         <label>Client Name</label>
         <input type="text" class="form-control" placeholder="Enter Name" asp-for="Name">

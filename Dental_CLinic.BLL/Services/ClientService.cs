@@ -53,12 +53,16 @@ namespace Dental_CLinic.BLL.Services
 
         public void Update(ClientVM clientVM)
         {
-            var client= _Context.clients.FirstOrDefault(x => x.Id == clientVM.Id);
-            client.Name = clientVM.Name;
-            client.Phone = clientVM.Phone;
-            client.Address = clientVM.Address;
-            _Context.Update(client);
-            _Context.SaveChanges();
+            var client= _Context.clients.FirstOrDefault(c=>c.Id==clientVM.Id);
+            if(client != null)
+            {
+                client.Name = clientVM.Name;
+                client.Phone = clientVM.Phone;
+                client.Address = clientVM.Address;
+                _Context.clients.Update(client);
+                _Context.SaveChanges();
+            }
+           
         }
     }
 }

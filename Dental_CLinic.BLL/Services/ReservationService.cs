@@ -59,7 +59,7 @@ namespace Dental_CLinic.BLL.Services
 
             reserve.Price = ReservationVM.Price;
             reserve.ReservationDate = ReservationVM.ReservationDate;
-            reserve.Client.Id = ReservationVM.ClientId;
+            reserve.Client = ReservationVM.Client;
 
             _Context.SaveChanges();
 

@@ -15,7 +15,8 @@ namespace Dental_CLinic.BLL
         public AutoMapper()
         {
             CreateMap<ClientVM, Client>().ReverseMap();
-
+            CreateMap<ReservationVM, Reservation>().ReverseMap();
+           
             
         }
     }

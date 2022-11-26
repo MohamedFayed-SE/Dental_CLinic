@@ -15,6 +15,7 @@ namespace Dental_Clinic.Controllers
             
         }
 
+
         public IActionResult Index()
         {
             return View();

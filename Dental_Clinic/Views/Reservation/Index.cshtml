@@ -18,8 +18,9 @@
                 <tr>
                     <th scope="col"># ID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Addres</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Client Id</th>
+                    <th scope="col">Reservation Date</th>
                     <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -31,7 +32,8 @@
                         <th scope="row">@item.Id</th>
                         <td>@item.Id</td>
                         <td>@item.Price</td>
-                        <td>@item.ClientId</td>
+                       
+                        <td>@item.ReservationDate</td>
                         <td>  <a asp-route-Id="@item.Id" asp-controller="Client" asp-action="Edit"> <button class="btn btn-info">Update</button> </a></td>
                         <td> <a asp-route-Id="@item.Id"> <button class="btn btn-danger">Delte</button> </a></td>
                     </tr>
