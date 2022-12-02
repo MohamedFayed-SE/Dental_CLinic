@@ -24,6 +24,12 @@ namespace Dental_CLinic.BLL.Services
         }
         public void Add(ReservationVM ReservationVM)
         {
+            /*var Result = new Reservation()
+            {
+                Price = ReservationVM.Price,
+                ReservationDate = ReservationVM.ReservationDate,
+                Client = _Context.clients.Single(c => c.Id == ReservationVM.ClientId)
+            };*/
             var Result = _Mapper.Map<Reservation>(ReservationVM);
 
             _Context.Reservations.Add(Result);
@@ -39,7 +45,7 @@ namespace Dental_CLinic.BLL.Services
 
         public IEnumerable<ReservationVM> Get()
         {
-            var reserves = _Context.Reservations;
+            var reserves = _Context.Reservations.Include(i=>i.Client);
             var Result = _Mapper.Map<ICollection<ReservationVM>>(reserves);
 
             return Result;
@@ -59,7 +65,7 @@ namespace Dental_CLinic.BLL.Services
 
             reserve.Price = ReservationVM.Price;
             reserve.ReservationDate = ReservationVM.ReservationDate;
-            reserve.Client = ReservationVM.Client;
+            reserve.Client = _Context.clients.SingleOrDefault(c => c.Id == ReservationVM.ClientId);
 
             _Context.SaveChanges();
 

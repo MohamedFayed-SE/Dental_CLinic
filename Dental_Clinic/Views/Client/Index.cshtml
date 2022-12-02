@@ -5,7 +5,7 @@
 }
 
 <div class="col-md-3">
-<a class="w-100" asp-controller="Client" asp-action="Add"><button class="btn btn-primary w-100">Add</button></a>
+<a class="w-100" asp-controller="Client" asp-action="Add"><button class="btn btn-primary w-100">@SharedLocallizer["Add"]</button></a>
 </div>
 
 <table class="table">
@@ -17,9 +17,12 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col"># ID</th>
-                        <th scope="col">Name</th>
+                    <th scope="col">@SharedLocallizer["Name"]</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Addres</th>
+                    <th scope="col">Country Name</th>
+                    <th scope="col">City Name</th>
+                    <th scope="col">Region Name</th>
                     <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                     </tr>
@@ -32,6 +35,9 @@
                             <td>@item.Name</td>
                             <td>@item.Phone</td>
                             <td>@item.Address</td>
+                        <td>@item.Region.City.Country.Name</td>
+                        <td>@item.Region.City.Name</td>
+                        <td>@item.Region.Name</td>
                         <td>  <a asp-route-Id="@item.Id" asp-controller="Client" asp-action="Edit"> <button class="btn btn-info">Update</button> </a></td>
                              <td> <a asp-route-Id="@item.Id"> <button class="btn btn-danger">Delte</button> </a></td>
                         </tr>

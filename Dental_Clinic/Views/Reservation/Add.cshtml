@@ -4,6 +4,7 @@
 }
 
 <h2>Add</h2>
+@inject Dental_CLinic.BLL.Interfaces.IClientService  Client
 
 
 @model Dental_CLinic.BLL.ViewModels.ReservationVM
@@ -29,10 +30,17 @@
     </div>
     <div class="form-check">
         <label for="exampleInputPassword1">Choose Client </label>
-        <span asp-validation-for="Client" class="text-danger"></span>
-        <select asp-for="Client" asp-items="(SelectList) ViewBag.ClientsList">
+        <span asp-validation-for="ClientId" class="text-danger"></span>
+        <select asp-for="ClientId" >
 
             <option value="">Select</option>
+            @foreach (var item in Client.Get())
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+          
+
+            Clients
         </select>
        
     </div>

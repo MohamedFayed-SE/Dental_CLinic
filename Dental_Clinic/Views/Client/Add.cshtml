@@ -2,7 +2,11 @@
 @{
     ViewData["Title"] = "Add";
 }
+@inject Dental_CLinic.BLL.Interfaces.ICityService cities
+@inject Dental_CLinic.BLL.Interfaces.ICounrtyService countries
+@inject Dental_CLinic.BLL.Interfaces.IRegionService regions
 @model  Dental_CLinic.BAl.Models.Client
+
 
 <form asp-controller="Client" asp-action="Add">
     <div class="form-group">
@@ -21,11 +25,105 @@
         <input type="text" class="form-control" placeholder="Address" asp-for="Address">
         <span asp-validation-for="Address" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <div class="form-check">
+        <label for="exampleInputPassword1">Choose Country </label>
+      
+        <select id="CountryList">
+
+            <option value="">Select</option>
+            @foreach (var item in countries.Get())
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+
+
+          
+        </select>
+
+        <div class="form-check">
+            <label for="exampleInputPassword1">Choose City </label>
+
+            <select id="CityList">
+
+                <option value="">Select</option>
+               
+
+
+            </select>
+            <div class="form-check">
+                <label for="exampleInputPassword1">Choose City </label>
+
+                <select id="RegionList" asp-for="RegionId">
+
+                    <option value="">Select</option>
+
+
+
+                </select>
+
+                <button class="btn btn-info" type="submit">@SharedLocallizer["Add"]</button>
+        
+         </form>
+
+        
 
 @section MicroSoftValidation {
 
     <script src="~/plugins//jquery-validation//jquery.validate.js"> </script>
     <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+    <script>
+        console.log("Hiiii");
+        $(function () {
+            $("#CountryList").change(function () {
+
+                var CountryId = $("#CountryList option:selected").val();
+                $("#CityList").empty();
+               $.ajax({
+
+                   type:"POST",
+                    url: "/Client/GetCityByCountryId",
+                    data: { CountryId: CountryId },
+                    success:function(res)
+                    {
+                        console.log(res,"response");
+                        $.each(res,function(i,e){
+                            $("#CityList").append("<option value='"+e.id+"'>"+e.name+" </option>")
+                        });
+                    }
+                   
+
+
+               });
+
+            });
+        }
+
+        )
+
+        $(function(){
+
+            $("#CityList").change(function () {
+                var CityId = $("#CityList option:selected").val();
+                console.log(CityId, "City Id");
+                $("#RegionList").empty();
+                $.ajax({
+
+                    type:"POST",
+                    url: "/Client/GetRegionsByCountryId",
+                    data: { cityId: CityId },
+                    success:function(res){
+                        console.log(res,"REgions Resposne")
+                        $.each(res,function(i,e){
+                            $("#RegionList").append("<option value='" + e.id + "'>" + e.name + " </option>")
+                        });
+                    }
+                })
+
+            })
+        });
+    </script>
 }
+    

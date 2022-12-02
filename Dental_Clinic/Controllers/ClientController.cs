@@ -7,10 +7,27 @@ namespace Dental_Clinic.Controllers
     public class ClientController : Controller
     {
         private readonly IClientService _clientService;
+        private readonly ICityService _cityService;
+        private readonly IRegionService _regionService;
 
-        public ClientController(IClientService clientService)
+        public ClientController(IClientService clientService, ICityService cityService, IRegionService regionService)
         {
             _clientService = clientService;
+            _cityService = cityService;
+            _regionService= regionService;
+        }
+
+        [HttpPost]
+        public JsonResult GetCityByCountryId(int countryId)
+        {
+            var Result = _cityService.getCitiesByCOountryID(countryId);
+
+            return Json(Result);
+        }
+        public JsonResult GetRegionsByCountryId(int cityId)
+        {
+            var Result = _regionService.getRegionsByCityId(cityId);
+            return Json(Result);
         }
         public IActionResult Index()
         {

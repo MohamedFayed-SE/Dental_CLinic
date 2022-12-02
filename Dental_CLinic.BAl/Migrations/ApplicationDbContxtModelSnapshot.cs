@@ -22,6 +22,29 @@ namespace Dental_CLinic.BAl.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Dental_CLinic.BAl.Models.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.ToTable("cities");
+                });
+
             modelBuilder.Entity("Dental_CLinic.BAl.Models.Client", b =>
                 {
                     b.Property<int>("Id")
@@ -44,9 +67,55 @@ namespace Dental_CLinic.BAl.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("int");
 
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("RegionId");
+
                     b.ToTable("clients");
+                });
+
+            modelBuilder.Entity("Dental_CLinic.BAl.Models.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("countries");
+                });
+
+            modelBuilder.Entity("Dental_CLinic.BAl.Models.Region", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("regions");
                 });
 
             modelBuilder.Entity("Dental_CLinic.BAl.Models.Reservation", b =>
@@ -57,7 +126,7 @@ namespace Dental_CLinic.BAl.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ClientId")
+                    b.Property<int>("ClientID")
                         .HasColumnType("int");
 
                     b.Property<double>("Price")
@@ -68,20 +137,63 @@ namespace Dental_CLinic.BAl.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClientId");
+                    b.HasIndex("ClientID");
 
                     b.ToTable("Reservations");
+                });
+
+            modelBuilder.Entity("Dental_CLinic.BAl.Models.City", b =>
+                {
+                    b.HasOne("Dental_CLinic.BAl.Models.Country", "Country")
+                        .WithMany("cities")
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("Dental_CLinic.BAl.Models.Client", b =>
+                {
+                    b.HasOne("Dental_CLinic.BAl.Models.Region", "Region")
+                        .WithMany("clients")
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Region");
+                });
+
+            modelBuilder.Entity("Dental_CLinic.BAl.Models.Region", b =>
+                {
+                    b.HasOne("Dental_CLinic.BAl.Models.City", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
                 });
 
             modelBuilder.Entity("Dental_CLinic.BAl.Models.Reservation", b =>
                 {
                     b.HasOne("Dental_CLinic.BAl.Models.Client", "Client")
                         .WithMany()
-                        .HasForeignKey("ClientId")
+                        .HasForeignKey("ClientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("Dental_CLinic.BAl.Models.Country", b =>
+                {
+                    b.Navigation("cities");
+                });
+
+            modelBuilder.Entity("Dental_CLinic.BAl.Models.Region", b =>
+                {
+                    b.Navigation("clients");
                 });
 #pragma warning restore 612, 618
         }

@@ -19,5 +19,10 @@ namespace Dental_CLinic.BAl.Models
         public string Address { get; set; }
 
         public ICollection<Reservation> reservations;
+
+        public int RegionId  { get; set; }
+
+        public Region Region { get; set; }
+        
     }
 }

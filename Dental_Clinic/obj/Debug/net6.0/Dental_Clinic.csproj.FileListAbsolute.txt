@@ -810,3 +810,8 @@ C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\obj\Debug\net6.0\scopedcss\proje
 C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\obj\Debug\net6.0\Dental_Clinic.csproj.CopyComplete
 C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\obj\Debug\net6.0\Dental_Clinic.genruntimeconfig.cache
 C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\obj\Debug\net6.0\ref\Dental_Clinic.dll
+C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\obj\Debug\net6.0\Dental_Clinic.Languages.SharedResource.resources
+C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\obj\Debug\net6.0\Dental_Clinic.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\bin\Debug\net6.0\ar-EG\Dental_Clinic.resources.dll
+C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\obj\Debug\net6.0\Dental_Clinic.Languages.SharedResource.ar-EG.resources
+C:\Users\HP\Desktop\Dental_CLinic\Dental_Clinic\obj\Debug\net6.0\ar-EG\Dental_Clinic.resources.dll

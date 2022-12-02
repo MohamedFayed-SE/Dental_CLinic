@@ -16,6 +16,7 @@ namespace Dental_CLinic.BAl.Models
         public DateTime ReservationDate { get; set; }
         [Required]
 
+        public int ClientID { get; set; }
         public Client Client { get; set; }
 
         

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "88Jt7UyfEQoNF2NvHTc8yVNpLWYbscuCHhaIJFewdR8=",
+  "Hash": "2OP5FBIrmxF1J457/nsWE4JaoqG0znMx6GXHl3X2rkI=",
   "Source": "Dental_Clinic",
   "BasePath": "_content/Dental_Clinic",
   "Mode": "Default",
@@ -1579,6 +1579,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\admin.js"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\Desktop\\Dental_CLinic\\Dental_Clinic\\wwwroot\\js\\CustomerDataTable.js",
+      "SourceId": "Dental_Clinic",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\Desktop\\Dental_CLinic\\Dental_Clinic\\wwwroot\\",
+      "BasePath": "_content/Dental_Clinic",
+      "RelativePath": "js/CustomerDataTable.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CustomerDataTable.js"
     },
     {
       "Identity": "C:\\Users\\HP\\Desktop\\Dental_CLinic\\Dental_Clinic\\wwwroot\\js\\demo.js",

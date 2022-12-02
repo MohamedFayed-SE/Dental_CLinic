@@ -16,8 +16,14 @@ namespace Dental_CLinic.BLL
         {
             CreateMap<ClientVM, Client>().ReverseMap();
             CreateMap<ReservationVM, Reservation>().ReverseMap();
-           
-            
+
+            CreateMap<CountryVM, Country>().ReverseMap();
+            CreateMap<CItyVM, City>().ReverseMap();
+            CreateMap<RegionVM, Region>().ReverseMap();
+
+
+
+
         }
     }
 }

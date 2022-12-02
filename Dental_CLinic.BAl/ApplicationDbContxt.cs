@@ -19,6 +19,10 @@ namespace Dental_CLinic.BAl
 
         public DbSet<Client> clients { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Country> countries { get; set; }
+        public DbSet<City> cities { get; set; }
+
+        public DbSet<Region> regions { get; set; }
 
     }
 }

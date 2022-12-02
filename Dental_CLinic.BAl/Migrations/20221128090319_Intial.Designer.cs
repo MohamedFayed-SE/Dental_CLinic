@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dental_CLinic.BAl.Migrations
 {
     [DbContext(typeof(ApplicationDbContxt))]
-    [Migration("20221112104913_add_Reservations")]
-    partial class add_Reservations
+    [Migration("20221128090319_Intial")]
+    partial class Intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,7 +59,7 @@ namespace Dental_CLinic.BAl.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ClientId")
+                    b.Property<int>("ClientID")
                         .HasColumnType("int");
 
                     b.Property<double>("Price")
@@ -70,7 +70,7 @@ namespace Dental_CLinic.BAl.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClientId");
+                    b.HasIndex("ClientID");
 
                     b.ToTable("Reservations");
                 });
@@ -79,7 +79,7 @@ namespace Dental_CLinic.BAl.Migrations
                 {
                     b.HasOne("Dental_CLinic.BAl.Models.Client", "Client")
                         .WithMany()
-                        .HasForeignKey("ClientId")
+                        .HasForeignKey("ClientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

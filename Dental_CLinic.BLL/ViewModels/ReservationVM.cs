@@ -16,7 +16,7 @@ namespace Dental_CLinic.BLL.ViewModels
         [Required]
         public DateTime ReservationDate { get; set; }
         [Required]
-
-        public Client Client { get; set; }
+        public int ClientId { get; set; }
+        public Client?  Client { get; set; }
     }
 }

@@ -38,7 +38,11 @@ namespace Dental_CLinic.BLL.Services
 
         public IEnumerable<ClientVM> Get()
         {
-            var Clients = _Context.clients;
+            var Clients = _Context.clients
+                .Include(c => c.Region)
+                .ThenInclude(r => r.City)
+                .ThenInclude(c => c.Country);
+                
             var Result = _Mapper.Map<IEnumerable<ClientVM>>(Clients);
 
             return Result;  
