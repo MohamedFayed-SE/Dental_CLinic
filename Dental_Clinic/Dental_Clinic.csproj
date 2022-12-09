@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Dental_CLinic.BLL\Dental_CLinic.BLL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
 </Project>

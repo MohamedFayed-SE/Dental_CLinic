@@ -1,4 +1,6 @@
 ﻿using Dental_CLinic.BAl.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Dental_CLinic.BAl
 {
-    public class ApplicationDbContxt:DbContext
+    public class ApplicationDbContxt:IdentityDbContext<IdentityUserExtend>
     {
         public ApplicationDbContxt(DbContextOptions<ApplicationDbContxt> options):base(options)
         {

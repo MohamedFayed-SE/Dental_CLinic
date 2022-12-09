@@ -50,7 +50,16 @@ namespace Dental_CLinic.BLL.Services
 
         public async Task<ClientVM> GetById(int id)
         {
-            var client= await  _Context.clients.FirstOrDefaultAsync(x => x.Id == id);
+            var client = await _Context.clients
+                .Include(c => c.Region)
+                .ThenInclude(r => r.City)
+                .ThenInclude(c => c.Country).
+
+            FirstOrDefaultAsync(x => x.Id == id);
+
+          
+                   
+                
             var Result = _Mapper.Map<ClientVM>(client);
             return Result;
         }

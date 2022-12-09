@@ -44,19 +44,36 @@ namespace Dental_Clinic.Controllers
         {
             if (ModelState.IsValid)
             {
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Files");
+
+                //create folder if not exist
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+                FileInfo fileInfo = new FileInfo(client.Photo.FileName);
+                string fileName = client.Photo.FileName + fileInfo.Extension;
+
+                string fileNameWithPath = Path.Combine(path, fileName);
+
+                using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
+                {
+                    client.Photo.CopyTo(stream);
+                }
+                client.ClientPhoto = fileName;
+
                 _clientService.Add(client);
                 return RedirectToAction("Index");
 
             }
-         
-           
-
             
 
 
-            return View();
 
-           // return RedirectToAction("Index");
+
+
+
+           
+
+            return RedirectToAction("Index");
         }
 
         public  async Task<IActionResult> Edit(int id)

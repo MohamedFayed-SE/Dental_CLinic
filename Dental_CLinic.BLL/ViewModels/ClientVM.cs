@@ -1,4 +1,5 @@
 ﻿using Dental_CLinic.BAl.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -22,5 +23,8 @@ namespace Dental_CLinic.BLL.ViewModels
         public int RegionId { get; set; }
 
         public Region? Region { get; set; }
+        public string? ClientPhoto { get; set; }
+        public IFormFile? Photo { get; set; }
+
     }
 }

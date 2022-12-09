@@ -23,6 +23,7 @@
                     <th scope="col">Country Name</th>
                     <th scope="col">City Name</th>
                     <th scope="col">Region Name</th>
+                    <th scope="col"> <a>Download</a></th>
                     <th scope="col">Update</th>
                     <th scope="col">Delete</th>
                     </tr>
@@ -38,6 +39,7 @@
                         <td>@item.Region.City.Country.Name</td>
                         <td>@item.Region.City.Name</td>
                         <td>@item.Region.Name</td>
+                        <td><img src="~/Files/@item.ClientPhoto" width="50" height="50"/></td>
                         <td>  <a asp-route-Id="@item.Id" asp-controller="Client" asp-action="Edit"> <button class="btn btn-info">Update</button> </a></td>
                              <td> <a asp-route-Id="@item.Id"> <button class="btn btn-danger">Delte</button> </a></td>
                         </tr>

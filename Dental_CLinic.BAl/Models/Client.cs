@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,11 @@ namespace Dental_CLinic.BAl.Models
         public string Address { get; set; }
 
         public ICollection<Reservation> reservations;
+
+        public string ClientPhoto { get; set; }
+        [NotMapped]
+
+        public IFormFile Photo { get; set; }
 
         public int RegionId  { get; set; }
 

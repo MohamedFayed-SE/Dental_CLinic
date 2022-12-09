@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dental_Clinic", "Dental_Clinic\Dental_Clinic.csproj", "{9F2E8157-038A-4ADC-9287-2A8BD0A91E73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dental_Clinic", "Dental_Clinic\Dental_Clinic.csproj", "{9F2E8157-038A-4ADC-9287-2A8BD0A91E73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dental_CLinic.BAl", "Dental_CLinic.BAl\Dental_CLinic.BAl.csproj", "{B03B9F8C-9434-4A86-8454-CD7D21B85D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dental_CLinic.BAl", "Dental_CLinic.BAl\Dental_CLinic.BAl.csproj", "{B03B9F8C-9434-4A86-8454-CD7D21B85D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dental_CLinic.BLL", "Dental_CLinic.BLL\Dental_CLinic.BLL.csproj", "{743BDF7D-8C5E-49D9-B90D-B05500283A1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dental_CLinic.BLL", "Dental_CLinic.BLL\Dental_CLinic.BLL.csproj", "{743BDF7D-8C5E-49D9-B90D-B05500283A1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dental_Clinic_APi", "Dental_Clinic_APi\Dental_Clinic_APi.csproj", "{584DE080-8E8F-4355-BB26-952ECFFAD350}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{743BDF7D-8C5E-49D9-B90D-B05500283A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{743BDF7D-8C5E-49D9-B90D-B05500283A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{743BDF7D-8C5E-49D9-B90D-B05500283A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{584DE080-8E8F-4355-BB26-952ECFFAD350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{584DE080-8E8F-4355-BB26-952ECFFAD350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{584DE080-8E8F-4355-BB26-952ECFFAD350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{584DE080-8E8F-4355-BB26-952ECFFAD350}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
