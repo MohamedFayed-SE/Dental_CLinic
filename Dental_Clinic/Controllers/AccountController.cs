@@ -10,11 +10,14 @@ namespace Dental_Clinic.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUserExtend> _userManager;
+        private readonly SignInManager<IdentityUserExtend> _signInManager;
+       
 
 
-        public AccountController(UserManager<IdentityUserExtend> userManager)
+        public AccountController(UserManager<IdentityUserExtend> userManager, SignInManager<IdentityUserExtend> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
         public IActionResult Index()
         {
@@ -68,6 +71,35 @@ namespace Dental_Clinic.Controllers
         {
 
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> LogIn(LgoInVM input)
+        {
+            var user = await _userManager.FindByEmailAsync(input.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Enter  A valid Email");
+                return View(input);
+            }
+            else
+            {
+                var Pssword = input.Password;
+                var isCorrect = await _userManager.CheckPasswordAsync(user, Pssword);
+                if (isCorrect)
+                    return RedirectToAction("Index", "Home");
+                else
+                {
+                    ModelState.AddModelError("", "InCoreect Password");
+                    return View(input);
+                }
+                   
+
+
+            }
+            
+            
+           
+
         }
         public IActionResult ResetPassword()
         {

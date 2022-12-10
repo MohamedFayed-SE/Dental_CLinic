@@ -1,5 +1,6 @@
 ﻿using Dental_CLinic.BLL.Interfaces;
 using Dental_CLinic.BLL.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dental_Clinic.Controllers
@@ -29,6 +30,7 @@ namespace Dental_Clinic.Controllers
             var Result = _regionService.getRegionsByCityId(cityId);
             return Json(Result);
         }
+        [Authorize(Roles ="null")]
         public IActionResult Index()
         {
             var Result = _clientService.Get();
